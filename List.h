@@ -23,7 +23,7 @@ template <typename T>
 class LinkedList
 {
 protected:
-	Node<T>* first; //pointer to the 1st element of the list
+	Node<T>* first; //pointer to the 1st xelement of the list
 	Node<T>* last; //pointer to the last element of the list 
 	size_t lenght; //actual lenght of list
 public:
@@ -45,8 +45,9 @@ public:
 
 	Node<T>* prepend(const T&); //add to start of list
 	Node<T>* apend(const T&); //add to end of list
-	Node<T>* insertAfter(const T&, const T&); //add element after chousen element
 	Node<T>* insertAfter(Node<T>*, const T&); //add element after chousen link
+	Node<T>* insertAfter(const T&, const T&); //add element after chousen element
+	void remove(Node<T>*);
 	void remove(const T&);
 
 	Node<T>* beg() const { return first; };
@@ -157,15 +158,7 @@ std::ostream& operator<<(std::ostream& ot, const LinkedList<T>& l) //operator of
 template<typename T>
 LinkedList<T>::~LinkedList()
 {
-	Node<T>* del{ first };
-	while (first)
-	{
-		del = first;
-		first = first->next;
-		delete del;
-	}
-	last = nullptr;
-	lenght = 0;
+	clear();
 }
 
 template<typename T>
@@ -211,11 +204,9 @@ Node<T>* LinkedList<T>::apend(const T& it)
 	return last;
 }
 
-
 template<typename T>
-void LinkedList<T>::remove(const T& d)
+void LinkedList<T>::remove(Node<T>* toDel)
 {
-	Node<T>* toDel{ find(d) };
 	if (!toDel) return;
 	if (toDel == first)
 	{
@@ -235,6 +226,13 @@ void LinkedList<T>::remove(const T& d)
 	}
 	delete toDel;
 	--lenght;
+}
+
+template<typename T>
+void LinkedList<T>::remove(const T& d)
+{
+	Node<T>* toDel{ find(d) };
+	remove(toDel);
 }
 
 template<typename T>
@@ -281,4 +279,3 @@ void LinkedList<T>::copy(const LinkedList<T> B)
 		ptrA = nullptr;
 	}
 }
-
