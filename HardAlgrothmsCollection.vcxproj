@@ -146,6 +146,7 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="MatrixWork.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

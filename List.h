@@ -22,7 +22,7 @@ struct Node {
 template <typename T>
 class LinkedList
 {
-private:
+protected:
 	Node<T>* first; //pointer to the 1st element of the list
 	Node<T>* last; //pointer to the last element of the list 
 	size_t lenght; //actual lenght of list
@@ -35,27 +35,8 @@ public:
 	LinkedList() noexcept; //clear cinstructor
 	LinkedList(const T&) noexcept; //1-element constructor
 	LinkedList(const LinkedList<T>&) noexcept; //copy constructor 
-	LinkedList(LinkedList<T>&&) noexcept; //Right lavue construcotr
-	LinkedList(const LinkedList<T>&&) noexcept; // по noexcept тоже
-
-	//
-	/*OPERATORS*/
-	//
-
-	const LinkedList<T>& operator=(const LinkedList<T>&); //operator appropriation
-
-	friend std::ostream& operator<<(std::ostream& ot, const LinkedList<T>& l) //operator of output 
-	{		//its just doesent work if it bounce of class
-		Node<T>* it{ l.first };
-		while (it)
-		{
-			ot << "	" << it->data;
-			it = it->next;
-		}
-		ot << '\n';
-		return ot;
-	}
-
+	LinkedList(LinkedList<T>&&) noexcept; //Rvalue construcotr
+	LinkedList(const LinkedList<T>&&) noexcept; //Ravlue const constructor
 	~LinkedList(); //destructor, lol
 
 	//
@@ -64,7 +45,7 @@ public:
 
 	Node<T>* prepend(const T&); //add to start of list
 	Node<T>* apend(const T&); //add to end of list
-	Node<T>* insertAfter(const T& , const T&); //add element after chousen element
+	Node<T>* insertAfter(const T&, const T&); //add element after chousen element
 	Node<T>* insertAfter(Node<T>*, const T&); //add element after chousen link
 	void remove(const T&);
 
@@ -76,6 +57,16 @@ public:
 
 	void clear();
 	void copy(const LinkedList<T>);
+
+	//
+	/*OPERATORS*/
+	//
+
+	const LinkedList<T>& operator=(const LinkedList<T>&); //operator appropriation
+	
+	template <typename T>
+	friend std::ostream& operator<<(std::ostream&, const LinkedList<T>&); //operator of output 
+
 };
 
 template <typename T>
@@ -148,6 +139,19 @@ const LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& B)
 	}
 
 	return *this;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& ot, const LinkedList<T>& l) //operator of output 
+{
+	Node<T>* it{ l.first };
+	while (it)
+	{
+		ot << "	" << it->data;
+		it = it->next;
+	}
+	ot << '\n';
+	return ot;
 }
 
 template<typename T>

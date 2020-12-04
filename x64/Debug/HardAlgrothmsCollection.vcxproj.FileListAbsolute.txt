@@ -1,0 +1,2 @@
+C:\ConpectTrash\PracticsAlgoritms\visual\CPPCOLLECT\x64\Debug\HardAlgrothmsCollection.exe
+C:\ConpectTrash\PracticsAlgoritms\visual\CPPCOLLECT\x64\Debug\HardAlgrothmsCollection.pdb

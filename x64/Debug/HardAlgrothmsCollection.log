@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\ConpectTrash\PracticsAlgoritms\visual\CPPCOLLECT\Collection.h(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\ConpectTrash\PracticsAlgoritms\visual\CPPCOLLECT\Stack.h(33,11): error C2995: Stack<T>::Stack(void): шаблон функции уже определен
+C:\ConpectTrash\PracticsAlgoritms\visual\CPPCOLLECT\Stack.h(16): message : см. объявление "Stack<T>::Stack"

@@ -1,25 +1,13 @@
 #include "Collection.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main()
 {
-	LinkedList<double> ost;
-	
-	LinkedList<double> tost;
-	
-	for (size_t i = 0; i < 10; i++)
-	{
-		tost.apend(i);
-	}
+	system("chcp 1251 & cls");
 
-	ost = tost;
-	
-	cout << ost;
-
-	ost.insertAfter(2, 3);
-
-	cout << ost;
+	Stack<int> a();
 
 }

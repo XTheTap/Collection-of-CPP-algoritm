@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4199886a-55f0-4249-8a2e-9e116d055474" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/.suo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/Browse.VC.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/ipch/AutoPCH/54064065483042f9/MAIN.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/ipch/AutoPCH/82a2e75a04a55d32/MAIN.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/ipch/AutoPCH/b49d6b54214d030b/MAIN.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/ipch/AutoPCH/baeef0afe2504e2c/GRAPH.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/HardAlgrothmsCollection/v16/ipch/AutoPCH/e360d4023dc633a4/MAIN.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.ilk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.vcxproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HardAlgrothmsCollection.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/HardAlgrothmsCollection.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/HardAlgrothmsCollection.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgr.316786de.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.exe.recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.iobj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.ipdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/HardAlgrothmsCollection.vcxproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/vc142.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/HardAlgrothmsCollection.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgr.316786de.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.exe.recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.ilk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/HardAlgrothmsCollection.vcxproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/Main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/vc142.idb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Debug/vc142.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/HardAlgrothmsCollection.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/HardAlgrothmsCollection.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgr.316786de.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.exe.recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.iobj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.ipdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/HardAlgrothmsCollection.vcxproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/Main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x64/Release/vc142.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Графпнг.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collection.h" beforeDir="false" afterPath="$PROJECT_DIR$/Collection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/HardAlgrothmsCollection.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/HardAlgrothmsCollection.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgr.316786de.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.exe.recipe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.log" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/HardAlgrothmsCollection.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HardAlgrothmsCollection.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/HardAlgrothmsCollection.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HardAlgrothmsCollection.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/HardAlgrothmsCollection.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MatrixWork.h" beforeDir="false" afterPath="$PROJECT_DIR$/MatrixWork.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vs.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lA0J17p7OV3JJYfGOO0Cg9Ajji" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4199886a-55f0-4249-8a2e-9e116d055474" name="Default Changelist" comment="" />
+      <created>1607024513930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607024513930</updated>
+      <workItem from="1607024516082" duration="300000" />
+      <workItem from="1607024833557" duration="8000" />
+      <workItem from="1607024856058" duration="596000" />
+      <workItem from="1607026262982" duration="752000" />
+      <workItem from="1607027033545" duration="78000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
