@@ -181,10 +181,10 @@ void Graph<T>::Dijkstra(size_t vrtx) const //cout in function is pour code, but 
 
 		while (!st.empty()) //just output of stack 
 		{
-			std::cout << " - " << st.top();
+			std::cout << " -> " << st.top();
 			st.pop();
 		}
-		std::cout << '\n';
+		std::cout << " с длинной " << weight[i] << '\n';
 	}
 	std::cout << "\n\n";
 
@@ -265,29 +265,29 @@ inline void Graph<T>::bellmanFord(size_t v) const
 	weight[v - 1] = 0;
 
 	for (size_t i = 0; i < count - 1; i++)
-	{
-		for (size_t i = 0; i < count; i++) //какого? 
-		{
+		for (size_t i = 0; i < count; i++) 
 			for (size_t j = 0; j < count; j++)
-			{
 				if (adjMatrix[i][j] && weight[i] < UINT_MAX)
-				{
 					if (weight[j] > weight[i] + adjMatrix[i][j])
 					{
 						weight[j] = weight[i] + adjMatrix[i][j];
 						from[j] = i + 1;
 					}
-				}
-			}
-		}
-	}
 
-	std::cout << "Shortest path from vertex\n" << v << ":\n";
+	std::stack<size_t> st;
+
 	for (size_t i = 0; i < count; i++)
 	{
-		std::cout
-			<< "Путь к: " << "\t" << i + 1 << ": "
-			<< "\t" << weight[i] << "\n";
+		std::cout << "К " << ' ' << i + 1 << "ой вершине: " << v;
+		for (size_t j = i; weight[j] != 0; j = from[j] - 1)//write the way to steck to reverse it
+			st.push(j + 1); //ПУШ ЕГО
+
+		while (!st.empty()) //just output of stack 
+		{
+			std::cout << " -> " << st.top();
+			st.pop();
+		}
+		std::cout << " с длинной " << weight[i] <<  "\n";
 	}
 	std::cout << "\n";
 }
