@@ -2,12 +2,14 @@
 #include <iostream>
 #include <fstream>
 #include <stack>
+#include <vector>
 
 template<typename T = int>
 class Graph
 {
 private:
-	T** adj_matrix; //make template that we can choose any type of date as way
+	T** adjMatrix; //make template z choose any type of date as way
+
 	size_t count;
 	
 	void copy(const Graph<T>&);
@@ -26,10 +28,12 @@ public:
 	/*FUNCTIONS*/
 	//
 
+
 	void Clear();
 	void CreateDirMat(std::ifstream&);
 	void Dijkstra(size_t) const;
-	void floydWarshall() const;
+	std::vector<size_t> floydWarshallWay(size_t, size_t) const;
+	void bellmanFord(size_t) const;
 
 	//
 	/*OPERATORS*/
@@ -46,10 +50,11 @@ public:
 
 template<typename T>
 Graph<T>::Graph(size_t n)
-	:count{ n }, adj_matrix{ new T * [n] {} }
+	:count{ n }, adjMatrix{ new T * [n] {} }
 {
-	for (size_t i = 0; i < count; i++)
-		adj_matrix[i] = new T[count]{};	
+	for (size_t i = 0; i < count; i++) 
+		adjMatrix[i] = new T[count]{};
+	
 }
 
 template<typename T>
@@ -68,11 +73,11 @@ template<typename T>
 void Graph<T>::Clear()
 {
 	for (size_t i = 0; i < count; i++)
-		delete[] adj_matrix[i];
+		delete[] adjMatrix[i];
+	
+	delete[] adjMatrix;
 
-	delete[] adj_matrix;
-
-	adj_matrix = nullptr;
+	adjMatrix = nullptr;
 }
 
 template<typename T>
@@ -80,20 +85,21 @@ void Graph<T>::CreateDirMat(std::ifstream& in) //oriented suspended Graph
 {
 	if (!in) return;
 
-	if (adj_matrix) Clear();
+	if (adjMatrix) Clear();
 
 	size_t i, j; T k;
 
 	in >> count; //take a size of matr
-	adj_matrix = new T * [count] {};
+	adjMatrix = new T * [count] {};
 
-	for (size_t i = 0; i < count; i++) //create a matrix
-		adj_matrix[i] = new T[count]{};
+	for (size_t i = 0; i < count; i++) 
+		adjMatrix[i] = new T[count]{};
+
 
 	do
 	{
 		in >> i >> j >> k;
-		adj_matrix[i - 1][j - 1] = k;
+		adjMatrix[i - 1][j - 1] = k;
 	} while (in);
 }
 
@@ -101,21 +107,21 @@ template<typename T>
 void Graph<T>::copy(const Graph<T>& n)
 {
 	count = n.count;
-	adj_matrix = new T * [count] {};
+	adjMatrix = new T * [count] {};
 
 	for (size_t i = 0; i < count; i++)
-		adj_matrix[i] = new T[count]{};
+		adjMatrix[i] = new T[count]{};
 
 	for (size_t i = 0; i < n.count; i++)
 		for (size_t j = 0; j < n.count; j++)
-			adj_matrix[i][j] = n.adj_matrix[i][j];
+			adjMatrix[i][j] = n.adjMatrix[i][j];
 		
 }
 
 template<typename T>
 void Graph<T>::Dijkstra(size_t vrtx) const //cout in function is pour code, but its necessary sacrifice to make normal 
 {										// output without returning type data like list of stack or smth like this
-	if (!adj_matrix || !count) return;
+	if (!adjMatrix || !count) return;
 
 	if (vrtx < 1 || vrtx > count) return;
 	
@@ -145,11 +151,11 @@ void Graph<T>::Dijkstra(size_t vrtx) const //cout in function is pour code, but 
 
 		for (size_t j = 0; j < count; j++) //detour all vertex
 		{
-			if (!ready[j] && adj_matrix[closest][j]) //if not used - use index of min by row 
+			if (!ready[j] && adjMatrix[closest][j]) //if not used - use index of min by row 
 			{
-				if (min + adj_matrix[closest][j] < weight[j]) //if minimum + way of all row < that we calculated paster 
+				if (min + adjMatrix[closest][j] < weight[j]) //if minimum + way of all row < that we calculated paster 
 				{
-					weight[j] = min + adj_matrix[closest][j]; //write a new write from this 
+					weight[j] = min + adjMatrix[closest][j]; //write a new write from this 
 					from[j] = closest + 1; //write a way of this
 				}
 			}
@@ -190,57 +196,110 @@ void Graph<T>::Dijkstra(size_t vrtx) const //cout in function is pour code, but 
 
 
 template<class T>
-void Graph<T>::floydWarshall() const
+std::vector<size_t> Graph<T>::floydWarshallWay(size_t from, size_t to) const
 {
-	if (!adj_matrix || !count) return;
+	if (!adjMatrix || !count) return {};
 
-	int** weight_mtx = new int* [count] {};
+	size_t** weightMtx = new size_t * [count] {};
+	size_t** wayMtx = new size_t * [count] {};
 
 	for (size_t i = 0; i < count; i++)
 	{
-		weight_mtx[i] = new int[count] {};
-		for (size_t j = 0; j < count; j++)
-		{
-			if (i == j)
-			{
-				weight_mtx[i][j] = 0;
-				continue;
-			}
-			weight_mtx[i][j] = adj_matrix[i][j] ? adj_matrix[i][j] : INT_MAX;
+		weightMtx[i] = new size_t[count] {};
+		wayMtx[i] = new size_t[count] {};
+		
+		for (size_t j = 0; j < count; j++) {
+			 weightMtx[i][j] = adjMatrix[i][j] ? adjMatrix[i][j] : INT_MAX;
+			 wayMtx[i][j] = weightMtx[i][j] ? j : INT_MAX;
 		}
 	}
 
+	for (size_t k = 0; k < count; k++)
+		for (size_t i = 0; i < count; i++)
+			for (size_t j = 0; j < count; j++)
+				if (weightMtx[i][k] < INT_MAX && weightMtx[k][j] < INT_MAX)
+					if (weightMtx[i][j] > weightMtx[i][k] + weightMtx[k][j])
+					{
+						weightMtx[i][j] = weightMtx[i][k] + weightMtx[k][j];
+						wayMtx[i][j] = wayMtx[i][k];
+					}
+					
+
 	for (size_t i = 0; i < count; i++)
 		for (size_t j = 0; j < count; j++)
-			for (size_t k = 0; k < count; k++)
-				if (weight_mtx[j][i] < INT_MAX && weight_mtx[i][k] < INT_MAX)
-					if (weight_mtx[j][k] > weight_mtx[j][i] + weight_mtx[i][k])
-						weight_mtx[j][k] = weight_mtx[j][i] + weight_mtx[i][k];
+			if (weightMtx[i][j] == INT_MAX) 
+				wayMtx[i][j] = weightMtx[i][j] = 0;
+
+
+
+	from--; to--;
+
+	std::cout << "Длинна пути: " << weightMtx[from][to] << "\n";
+
+	if (wayMtx[from][to] == 0) { return {}; }
+
+	std::vector<size_t> path = { from + 1};
+
+	while (from != to)
+	{
+		from = wayMtx[from][to];
+		path.push_back(from + 1);
+	}
 	
 
-	for (size_t i = 0; i < count; i++)
-		for (size_t j = 0; j < count; j++)
-			if (weight_mtx[i][j] == INT_MAX) weight_mtx[i][j] = 0;
+	return path;
+}
 
-	std::cout << "От любой точки до любой кратчайший путь:\n";
-	for (size_t i = 0; i < count; i++)
+
+template<class T>
+inline void Graph<T>::bellmanFord(size_t v) const
+{
+	if (!adjMatrix || !count) return;
+	if (v < 1 || v > count) return;
+
+	size_t* weight{ new size_t[count]{} };
+	size_t* from{ new size_t[count]{} };
+
+	for (size_t i = 0; i < count; i++) weight[i] = UINT_MAX;
+
+	weight[v - 1] = 0;
+
+	for (size_t i = 0; i < count - 1; i++)
 	{
-		for (size_t j = 0; j < count; j++)
-			std::cout << "\t" << weight_mtx[i][j];
-		std::cout << "\n";
+		for (size_t i = 0; i < count; i++) //какого? 
+		{
+			for (size_t j = 0; j < count; j++)
+			{
+				if (adjMatrix[i][j] && weight[i] < UINT_MAX)
+				{
+					if (weight[j] > weight[i] + adjMatrix[i][j])
+					{
+						weight[j] = weight[i] + adjMatrix[i][j];
+						from[j] = i + 1;
+					}
+				}
+			}
+		}
 	}
 
+	std::cout << "Shortest path from vertex\n" << v << ":\n";
+	for (size_t i = 0; i < count; i++)
+	{
+		std::cout
+			<< "Путь к: " << "\t" << i + 1 << ": "
+			<< "\t" << weight[i] << "\n";
+	}
 	std::cout << "\n";
 }
 
-template<typename T>
+template<class T>
 std::ostream& operator<<(std::ostream& out, const Graph<T>& gr)
 {
 	for (size_t i = 0; i < gr.count; i++)
 	{
 		for (size_t j = 0; j < gr.count; j++)
 		{
-			out << gr.adj_matrix[i][j] << '\t';
+			out << gr.adjMatrix[i][j] << '\t';
 		}
 		out << "\n";
 	}
@@ -256,7 +315,7 @@ std::istream& operator>>(std::istream& in, Graph<T>& gr)
 	size_t i, j; T k;
 	
 	in >> i >> j >> k;
-	gr.adj_matrix[i - 1][j - 1] = k;
+	gr.adjMatrix[i - 1][j - 1] = k;
 
 	return in;
 }

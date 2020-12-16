@@ -7,21 +7,25 @@ int main()
 {
 	system("chcp 1251 & cls");
 
-	Stack<int> te;
-	stack<int> tl;
-	
-	for (size_t i = 0; i < 10; i++)
-	{
-		te.Push(i);
-		tl.push(i);
-	}
+	Graph<int> a;
 
-	for (size_t i = 0; i < 10; i++)
-	{
-		cout << te.Top() << " " << tl.top() << endl;
-		te.Pop();
-		tl.pop();
-	}
+	ifstream b("file.txt");
 
+	a.CreateDirMat(b);
+
+	a.bellmanFord(1);
+
+	return 1;
+
+	size_t c, d;
+	cout << "Из ";
+	cin >> c;
+	cout << "В ";
+	cin >> d;
+
+	auto path = a.floydWarshallWay(c, d);
+	for (size_t i = 0; i < path.size() - 1; i++)
+		std::cout << path[i] << " -> ";
+	std::cout << path[path.size() - 1] << '\n';
 
 }

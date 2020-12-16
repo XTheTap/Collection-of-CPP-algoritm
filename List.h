@@ -115,47 +115,6 @@ LinkedList<T>::LinkedList(LinkedList<T>&& B) noexcept
 }
 
 template<typename T>
-const LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& B)
-{
-	if (this != &B)
-	{
-		clear();
-
-		if (!B.isEmpty())
-		{
-			lenght = B.lenght;
-			Node<T>* ptrB{ B.first };
-			first = new Node<T>{ ptrB->data };
-			Node<T>* ptrA{ first };
-			ptrB = ptrB->next;
-			while (ptrB)
-			{
-				ptrA->next = new Node<T>{ ptrB->data };
-				ptrB = ptrB->next;
-				ptrA = ptrA->next;
-			}
-			last = ptrA;
-			ptrA = nullptr;
-		}
-	}
-
-	return *this;
-}
-
-template <typename T>
-std::ostream& operator<<(std::ostream& ot, const LinkedList<T>& l) //operator of output 
-{
-	Node<T>* it{ l.first };
-	while (it)
-	{
-		ot << "	" << it->data;
-		it = it->next;
-	}
-	ot << '\n';
-	return ot;
-}
-
-template<typename T>
 LinkedList<T>::~LinkedList()
 {
 	clear();
@@ -254,6 +213,7 @@ void LinkedList<T>::clear()
 		first = first->next;
 		delete del;
 	}
+	first = nullptr;
 	last = nullptr;
 	lenght = 0;
 }
@@ -278,4 +238,47 @@ void LinkedList<T>::copy(const LinkedList<T> B)
 		last = ptrA;
 		ptrA = nullptr;
 	}
+}
+
+
+template<typename T>
+const LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& B)
+{
+	if (this != &B)
+	{
+		clear();
+
+		if (!B.isEmpty())
+		{
+			lenght = B.lenght;
+			Node<T>* ptrB{ B.first };
+			first = new Node<T>{ ptrB->data };
+			Node<T>* ptrA{ first };
+			ptrB = ptrB->next;
+			while (ptrB)
+			{
+				ptrA->next = new Node<T>{ ptrB->data };
+				ptrB = ptrB->next;
+				ptrA = ptrA->next;
+			}
+			last = ptrA;
+			ptrA = nullptr;
+		}
+	}
+
+	return *this;
+}
+
+
+template <typename T>
+std::ostream& operator<<(std::ostream& ot, const LinkedList<T>& l) //operator of output 
+{
+	Node<T>* it{ l.first };
+	while (it)
+	{
+		ot << "	" << it->data;
+		it = it->next;
+	}
+
+	return ot;
 }
