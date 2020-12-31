@@ -1,8 +1,8 @@
-#pragma once
 #include <iostream>
 #include <fstream>
 #include <stack>
 #include <vector>
+#include <queue>
 
 template<typename T = int>
 class Graph
@@ -13,6 +13,8 @@ private:
 	size_t count;
 	
 	void copy(const Graph<T>&);
+
+	bool bfs(T**, size_t, size_t, size_t*);
 public:
 
 	//
@@ -34,6 +36,7 @@ public:
 	void Dijkstra(size_t) const;
 	std::vector<size_t> floydWarshallWay(size_t, size_t) const;
 	void bellmanFord(size_t) const;
+	size_t fordFolkerson(size_t s, size_t t);
 
 	//
 	/*OPERATORS*/
@@ -200,8 +203,8 @@ std::vector<size_t> Graph<T>::floydWarshallWay(size_t from, size_t to) const
 {
 	if (!adjMatrix || !count) return {};
 
-	size_t** weightMtx = new size_t * [count] {};
-	size_t** wayMtx = new size_t * [count] {};
+	size_t** weightMtx{ new size_t * [count] {} };
+	size_t** wayMtx = {new size_t * [count] {}};
 
 	for (size_t i = 0; i < count; i++)
 	{
@@ -257,8 +260,8 @@ inline void Graph<T>::bellmanFord(size_t v) const
 	if (!adjMatrix || !count) return;
 	if (v < 1 || v > count) return;
 
-	size_t* weight{ new size_t[count]{} };
-	size_t* from{ new size_t[count]{} };
+	size_t* weight = new size_t[count]{} ;
+	size_t* from = new size_t[count]{} ;
 
 	for (size_t i = 0; i < count; i++) weight[i] = UINT_MAX;
 
@@ -291,6 +294,77 @@ inline void Graph<T>::bellmanFord(size_t v) const
 	}
 	std::cout << "\n";
 }
+
+template<typename T>
+inline size_t Graph<T>::fordFolkerson(size_t s, size_t t)
+{
+	s--, t--;
+
+	size_t u, v;
+
+	T** rGraph{ new T * [count] };
+
+	for (size_t i = 0; i < count; i++) {
+		rGraph[i] = new T[count]{};
+		for (size_t j = 0; j < count; j++)
+			rGraph[i][j] = adjMatrix[i][j];
+	}
+
+	size_t* parent { new size_t[count] };
+
+	size_t maxFlow { 0 };
+
+	while (bfs(rGraph, s, t, parent))
+	{
+		T pathFlow = INT_MAX;
+		for (v = t; v != s; v = parent[v])
+		{
+			u = parent[v];
+			pathFlow = std::min(pathFlow, rGraph[u][v]);
+		}
+
+		for (v = t; v != s; v = parent[v])
+		{
+			u = parent[v];
+			rGraph[u][v] -= pathFlow;
+			rGraph[v][u] += pathFlow;
+		}
+
+		maxFlow += pathFlow;
+	}
+ 
+	return maxFlow;
+}
+
+template<typename T>
+inline bool Graph<T>::bfs(T** rGraph, size_t s, size_t t, size_t* parent)
+{
+	bool* visited{ new bool[count] {} };
+
+	std::queue<size_t> q;
+	q.push(s);
+	visited[s] = true;
+	parent[s] = -1;
+
+	while (!q.empty())
+	{
+		int u = q.front();
+		q.pop();
+
+		for (size_t v = 0; v < count; v++)
+		{
+			if (!visited[v] && rGraph[u][v] > 0)
+			{
+				q.push(v);
+				parent[v] = u;
+				visited[v] = true;
+			}
+		}
+	}
+
+	return visited[t];
+}
+
 
 template<class T>
 std::ostream& operator<<(std::ostream& out, const Graph<T>& gr)
